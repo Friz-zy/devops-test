@@ -12,7 +12,7 @@ Provide one or two options for how would you propose them to change how they sav
 
 I assume that currently the configuration files are baked into the Docker image in plain text during the application build. In that case, I suggest the following changes:
 
-##### Step 0
+### Step 0
 
 Store the configuration file into [kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret) rather than baking it into the base image as a more secure and flexible approach. We can store the entire file as a whole or split it into key-value pairs depending on the type of configuration file. The only issue with kubernetes secrets is that they are accessible at the namespace level. Therefore, it's a good practice to limit the number of applications within a namespace for better security. However, questions about organizing applications into namespaces and the levels of isolation go beyond the scope of the current request.
 
@@ -35,7 +35,7 @@ To start with, the cluster administrator can manually create and update secrets 
 
 In the future, it's a common practice to separate regular configuration from secrets. You can store regular configuration in [ConfigMaps](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/) or environment variables, which provides more flexibility and better management. ConfigMaps are suitable for non-sensitive configuration data allow you to use templating, while environment variables are convenient for configuring applications and adhere to 12-factor app principles.
 
-##### Step 1
+### Step 1
 
 Configure gitops way of storing such secrets. You can choose and adopt one of this ways for storing k8s secrets in encrypted form in your git repo according to your setup. The only downside is that updating secrets will require more effort.
 
@@ -43,7 +43,7 @@ Configure gitops way of storing such secrets. You can choose and adopt one of th
 
 - Instead of decrypting in the CI/CD pipeline, you can use a dedicated kubernetes controller for this purpose: [sealed-secrets](https://github.com/bitnami-labs/sealed-secrets)
 
-##### Step 2
+### Step 2
 
 In the future, you can consider integrating one of the following significant tools, either into your kubernetes cluster or into your applications directly:
 
