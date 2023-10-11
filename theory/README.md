@@ -54,3 +54,7 @@ In the future, you can consider integrating one of the following significant too
 - [Infisical](https://infisical.com/)
 - [1password.com](https://1password.com/product/secrets/)
 - [Conjur](https://www.conjur.org/)
+
+Let's consider the integration of vault and kubernetes. The simplest way to integrate an external password manager with kubernetes is to use the [Secrets Store CSI Driver](https://secrets-store-csi-driver.sigs.k8s.io/). If, for some reason, this doesn't fit your needs, you can opt for a dedicated operator for your storage system (for HashiCorp Vault, it's the [vault secrets operator](https://github.com/hashicorp/vault-secrets-operator)) or choose a kubernetes webhook-based solution, such as [k8s vault webhook](https://github.com/OT-CONTAINER-KIT/k8s-vault-webhook).
+
+If you want to work with secrets directly from your application, you'll need to use the SDK provided by your specific cloud or infrastructure provider: [AWS SDK](https://docs.aws.amazon.com/code-library/latest/ug/secrets-manager_code_examples.html), [hashicorp vault](https://developer.hashicorp.com/vault/api-docs/libraries), and so on.
