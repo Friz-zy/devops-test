@@ -11,7 +11,7 @@ They have asked you if you can help create the following:
 
 # The solution
 
-For this particular case, we will use a [terraform](https://www.terraform.io/) setup with the [terraform-aws-eks](https://github.com/terraform-aws-modules/terraform-aws-eks) module since [HashiCorp themselves recommend its usage](https://developer.hashicorp.com/terraform/tutorials/kubernetes/eks). Alternatives could be [eksctl](https://eksctl.io/#) or terraform with the [aws_eks_cluster resource](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eks_cluster). Examples for further configuring the EKS cluster can be found in [eks blueprints](https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main) and [eks demo](https://github.com/awslabs/eksdemo) repos.
+For this particular case, we will use a [terraform](https://www.terraform.io/) setup with the [terraform-aws-eks](https://github.com/terraform-aws-modules/terraform-aws-eks) module since [HashiCorp themselves recommend its usage](https://developer.hashicorp.com/terraform/tutorials/kubernetes/eks). Alternatives could be [eksctl](https://eksctl.io/#) or terraform with the [aws_eks_cluster resource](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eks_cluster). Examples for further configuring the EKS cluster can be found in [eks blueprints](https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main), [tEKS](https://github.com/particuleio/teks) and [eks demo](https://github.com/awslabs/eksdemo) repos.
 
 Prerequisites:
 - The [terraform](https://developer.hashicorp.com/terraform/downloads?product_intent=terraform) utility version from 1.3. You can check your current version with `terraform -version`.
